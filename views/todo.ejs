@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://kit.fontawesome.com/05edd100f7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- --------NAV_BAR----------- -->
+    <div id="slide_menu" class="close_list">
+        <div id="menu_list">
+            <ul id="nav_container">
+                <li> <a class="nav_btn" id="to_home" href="#welcome-section">Home</a></li>
+                <li> <a class="nav_btn" id="to_about_section" href="#about_section">About me</a></li>
+                <li> <a class="nav_btn" id="to_project_section" href="#projects">Projects</a></li>
+                <li> <a class="nav_btn" id="to_contact_section" href="#contact_section">Contact</a></li>
+            </ul>
+        </div>
+        <div class="burger-align close_icon">
+            <div id="simply-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- --------END_NAV_BAR----------- -->
+
+    <div id="page_container">
+
+        <!-- --------HEADLING_BOX----------- -->
+        <div class="box" id="heading">
+            <h1> <%= listTitles %></h1>
+        </div>
+         <!-- --------END_HEADLING_BOX----------- -->
+    
+        
+         <!-- --------TASK_LIST----------- -->
+        <div class="box" id="main_list">
+            <form>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Do My Homework</p>
+                </div>
+            </form>
+            
+    
+           <% newListItems.forEach(function(item){ %>
+            <form id="<%=item._id%>">
+                <div class="item">
+                    <input class="check_box" type="checkbox" name="checkbox" value="<%=item._id%>">
+                    <p id="editable<%=item._id%>" contenteditable="false"><%= item.name %></p>
+                    <button type="button" class="edit_btn" data-edit="<%=item._id%>"><span>Press Enter to save</span></button>
+                </div>
+            </form>           
+            <% }) %>
+    
+        </div>
+        <!-- --------END_TASK_LIST----------- -->
+    
+        <!-- --------NEW_TASK----------- -->
+        <div class="box">
+            <form id="sumbit_form" class="item">
+                <input id="new_Item" type="text" name="newItem" placeholder="Add new item" autocomplete="off">
+                <button class="sub_btn" id="submit_btn" type="button" name="list" value="<%= listTitles %>">+</button>
+            </form>
+        </div>
+        <!-- --------END_NEW_TASK----------- -->
+    </div>
+    
+
+</body>
+
+<script type='text/javascript' src="todo.js"></script>
+
+</html>
+
+<!-- action="/" method="POST" -->

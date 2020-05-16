@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://kit.fontawesome.com/05edd100f7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="public/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- --------NAV_BAR----------- -->
+    <div id="slide_menu" class="close_list">
+        <div id="menu_list">
+            <ul id="nav_container">
+                <li> <a class="nav_btn" id="to_home" href="#welcome-section">Home</a></li>
+                <li> <a class="nav_btn" id="to_about_section" href="#about_section">About me</a></li>
+                <li> <a class="nav_btn" id="to_project_section" href="#projects">Projects</a></li>
+                <li> <a class="nav_btn" id="to_contact_section" href="#contact_section">Contact</a></li>
+            </ul>
+        </div>
+        <div class="burger-align close_icon">
+            <div id="simply-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- --------END_NAV_BAR----------- -->
+
+
+    <div id="page_container">
+        <div class="box" id="heading">
+            <h1>Your Day</h1>
+        </div>
+        <div class="box" id="main_list">
+            <div class="item">
+                <input type="checkbox">
+                <p id="1" contenteditable="false">Do My Homework</p>
+                <button class="edit_btn" data-edit="1"><span>Press Enter to save</span></button>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p id="2" contenteditable="false">Do My Homework</p>
+                <button class="edit_btn" data-edit="2"><span>Press Enter to save</span></button>
+            </div>
+            <!-- <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Do My Homework</p>
+            </div> -->
+               
+        </div>
+        <div class="box">
+            <form action="/" class="item" method="POST">
+                <input type="text" name="newItem" placeholder="Add new item" autocomplete="off">
+                <button class="sub_btn" type="submit" name="list" value="Hello">+</button>
+            </form> 
+        </div>
+    </div>
+    
+</body>
+<script type='text/javascript' src="public/todo.js"></script>
+</html>
